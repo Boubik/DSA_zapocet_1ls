@@ -4,8 +4,8 @@ namespace DSA_zapocet_1ls
 {
     internal class Zasobnik
     {
-        public List<int> numbers;
-        public int i;
+        private List<int> numbers;
+        private int i;
         public Zasobnik()
         {
             numbers = new List<int>();
@@ -18,7 +18,7 @@ namespace DSA_zapocet_1ls
 
         public int Pop()
         {
-            if(numbers.Count > 0)
+            if (numbers.Count > 0)
             {
                 i = numbers[(numbers.Count - 1)];
                 numbers.RemoveAt(numbers.Count - 1);

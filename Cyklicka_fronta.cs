@@ -8,11 +8,11 @@ namespace DSA_zapocet_1ls
 {
     class Cyklicka_fronta
     {
-        public List<int> numbers;
-        int count;
-        int write;
-        int read;
-        int m;
+        private List<int> numbers;
+        private int count;
+        private int write;
+        private int read;
+        private int m;
 
         public Cyklicka_fronta(int count)
         {

@@ -15,11 +15,10 @@ namespace DSA_zapocet_1ls
             uint count = 5; // 10^3 - 10^7
 
             List<int> numbers = new List<int>();
+            List<int> sorted_numbers = new List<int>();
             numbers = rnd_cisla(min, max, count);
 
-            //Console.WriteLine("Počáteční list s " + numbers.Count + ":");
-            //write_int_list(numbers);
-
+            // zasobník
             /*Zasobnik z = new Zasobnik();
             z.Push(5);
             z.Push(6);
@@ -30,7 +29,8 @@ namespace DSA_zapocet_1ls
             Console.WriteLine("\n\nlist\n");
             write_int_list(z.numbers);*/
 
-            Cyklicka_fronta c = new Cyklicka_fronta(3);
+            // cyklická fronta
+            /*Cyklicka_fronta c = new Cyklicka_fronta(3);
 
             c.Add(1);
             c.Add(2);
@@ -40,11 +40,23 @@ namespace DSA_zapocet_1ls
             Console.WriteLine(c.Get());
             Console.WriteLine(c.Get());
             Console.WriteLine(c.Get());
-            Console.WriteLine(c.Get());
+            Console.WriteLine(c.Get());*/
+
+
+            Console.WriteLine("Počáteční list s " + numbers.Count + ":");
+            write_int_list(numbers);
+
+            Console.WriteLine("\nseřazený list s " + sorted_numbers.Count + ":");
+            sorted_numbers = Sorty.BubleSort(numbers);
+            write_int_list(sorted_numbers);
 
             Console.ReadLine();
         }
 
+
+        /**
+         * vytvoří list náhodných čísel
+         */
         static public List<int> rnd_cisla(int min, int max, uint count)
         {
             List<int> numbers = new List<int>();
