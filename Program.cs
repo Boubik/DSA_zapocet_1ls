@@ -12,7 +12,7 @@ namespace DSA_zapocet_1ls
         {
             int min = 0;
             int max = 100;
-            uint count = 5; // 10^3 - 10^7
+            uint count = 6; // 10^3 - 10^7
 
             List<int> numbers = new List<int>();
             List<int> sorted_numbers = new List<int>();
@@ -46,8 +46,14 @@ namespace DSA_zapocet_1ls
             Console.WriteLine("Počáteční list s " + numbers.Count + ":");
             write_int_list(numbers);
 
-            Console.WriteLine("\nseřazený list s " + sorted_numbers.Count + ":");
+            // BubleSort
+            Console.WriteLine("\nseřazený list s BubleSortem:");
             sorted_numbers = Sorty.BubleSort(numbers);
+            write_int_list(sorted_numbers);
+
+
+            Console.WriteLine("\nseřazený list s MergeSortem:");
+            sorted_numbers = Sorty.MergeSort(numbers);
             write_int_list(sorted_numbers);
 
             Console.ReadLine();
