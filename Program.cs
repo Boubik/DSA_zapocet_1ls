@@ -45,16 +45,21 @@ namespace DSA_zapocet_1ls
 
             Console.WriteLine("Počáteční list s " + numbers.Count + ":");
             write_int_list(numbers);
-
+            /*
             // BubleSort
-            Console.WriteLine("\nseřazený list s BubleSortem:");
+            Console.WriteLine("\nseřazený list s Buble sortem:");
             sorted_numbers = Sorty.BubleSort(numbers);
             write_int_list(sorted_numbers);
 
 
-            Console.WriteLine("\nseřazený list s MergeSortem:");
+            Console.WriteLine("\nseřazený list s Merge sortem:");
             sorted_numbers = Sorty.MergeSort(numbers);
             write_int_list(sorted_numbers);
+
+
+            Console.WriteLine("\nseřazený list s Counting sort:");
+            sorted_numbers = Sorty.CountingSort(numbers);
+            write_int_list(sorted_numbers);*/
 
             Console.ReadLine();
         }

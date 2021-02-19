@@ -91,7 +91,7 @@ namespace DSA_zapocet_1ls
 
 
         /**
-         * hlavní logika MergeSortu. Spojuje dva listy a rovná je velikostně
+         * hlavní logika Merge Sortu. Spojuje dva listy a rovná je velikostně
          */
         private static List<int> Merge(List<int> l, List<int> r)
         {
@@ -131,6 +131,70 @@ namespace DSA_zapocet_1ls
                     resault.Add(r[ir]);
                     ir++;
                 }
+            }
+
+            return resault;
+        }
+
+        /**
+         * O(n)
+         */
+        public static List<int> CountingSort(List<int> numbers)
+        {
+            int i = 0;
+            List<int> resault = new List<int>();
+            List<int> count = new List<int>();
+
+            while (i != numbers.Count)
+            {
+                resault.Add(-1);
+                i++;
+            }
+
+            //najdeme minimum maximum
+            int min = numbers[0];
+            int max = numbers[0];
+            i = 0;
+            while (i != numbers.Count)
+            {
+                if (numbers[i] < min)
+                {
+                    min = numbers[i];
+                }
+                if (numbers[i] > max)
+                {
+                    max = numbers[i];
+                }
+                i++;
+            }
+
+            i = 0;
+            while (i != (max - min + 1))
+            {
+                count.Add(0);
+                i++;
+            }
+
+            i = 0;
+            while (i != numbers.Count)
+            {
+                count[numbers[i] - min]++;
+                i++;
+            }
+
+            count[0]--;
+            i = 1;
+            while (i != max - min + 1)
+            {
+                count[i] = count[i] + count[i - 1];
+                i++;
+            }
+
+            i = numbers.Count - 1;
+            while (i >= 0)
+            {
+                resault[count[numbers[i] - min]--] = numbers[i];
+                i--;
             }
 
             return resault;
