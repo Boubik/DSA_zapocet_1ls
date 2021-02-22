@@ -41,14 +41,21 @@ namespace DSA_zapocet_1ls
 
         public int Get()
         {
-            m = numbers[read];
-            read++;
-            if (read == count)
+            if (numbers.Count != read)
             {
-                read = 0;
-            }
+                m = numbers[read];
+                read++;
+                if (read == count)
+                {
+                    read = 0;
+                }
 
-            return m;
+                return m;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
